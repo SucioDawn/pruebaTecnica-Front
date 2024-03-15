@@ -1,0 +1,85 @@
+<form [formGroup]="formulario" (ngSubmit)="guardar()" #form="ngForm">
+  <p>Nombre completo</p>
+  <input formControlName="nombreCompleto" type="text">
+  @if (form.hasError('required', 'nombreCompleto') && form.submitted) {
+  <div class="error">
+    El campo es requerido
+  </div>
+  }
+
+
+  <p>Nombre de la empresa</p>
+  <input formControlName="nombreEmpresa" type="text">
+  @if (form.hasError('required', 'nombreEmpresa') && form.submitted) {
+  <div class="error">
+    El campo es requerido
+  </div>
+  }
+
+  <p>Correo electronico</p>
+  <input formControlName="correo" type="text">
+  @if (form.hasError('required', 'correo') && form.submitted) {
+  <div class="error">
+    El campo es requerido
+  </div>
+}
+  @if (form.hasError('email', 'correo') && formulario.controls['correo'].touched) {
+    <div class="error">
+      Debe ser una dirección de correo electrónico válida
+    </div>
+  }
+
+  
+
+  <div class="input-container">
+    <div class="input-group">
+      <p>Telefono</p>
+      <input formControlName="telefono" type="text">
+      @if (form.hasError('required', 'telefono') && form.submitted ) {
+      <div class="error">
+        El campo es requerido
+      </div>
+    }
+      @if (form.hasError('minlength', 'telefono') && formulario.controls['telefono'].touched) {
+      <div class="error">
+        El número de teléfono debe tener al menos 10 dígitos
+      </div>
+      }
+      @if (form.hasError('maxlength', 'telefono') && formulario.controls['telefono'].touched) {
+      <div class="error">
+        El número de teléfono debe tener como máximo 10 dígitos
+      </div>
+      }
+    </div>
+
+    <div class="input-group">
+      <p>Categoria</p>
+      <select formControlName="categoria">
+        <option value="Facturacion">Facturacion</option>
+        <option value="soporte técnico">soporte técnico</option>
+        <option value="ventas">ventas</option>
+        <option value="información general">información general</option>
+
+      </select>
+      @if (form.hasError('required', 'categoria') && form.submitted) {
+      <div class="error">
+        El campo es requerido
+      </div>
+      }
+    </div>
+  </div>
+
+  <p>Mensaje</p>
+  <input formControlName="mensaje" type="text" placeholder="Escriba su Mensaje">
+  @if (form.hasError('required', 'mensaje') && form.submitted) {
+  <div class="error">
+    El campo es requerido
+  </div>
+  }
+
+
+  <button type="submit">
+    Enviar
+  </button>
+
+</form>

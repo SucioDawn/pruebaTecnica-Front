@@ -1,0 +1,73 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem ;  
+  max-width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  
+}
+
+form p{
+  margin-bottom: -10px; 
+}
+
+form button{
+  max-width: 10%;
+  min-height: 40px;
+  background-color:#93FF33;
+  font-size: large;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+ 
+input{
+  height: 2rem;
+  max-height: 2rem;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  padding-left: 10px;
+}
+
+
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
+.input-container .input-group {
+  display: flex;
+  flex-direction: column;
+  border-color: red;
+  min-width: 50%;
+}
+
+.input-container input
+{
+  height: 1.7rem; 
+  min-width:5rem;
+  
+  max-width: 100%;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.input-container select {
+  height: 2.4rem; 
+  min-width:5rem;
+  margin-left: 5px;  
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.input-container p {
+  margin-bottom: 5px; 
+}
+.error {
+  color: red;
+  font-weight: 600;
+}
+
